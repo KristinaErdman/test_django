@@ -47,6 +47,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'ref.utils.my_middleware'
 ]
 
 ROOT_URLCONF = 'test_django.urls'
@@ -74,11 +75,22 @@ WSGI_APPLICATION = 'test_django.wsgi.application'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 DATABASES = {
-    'default': {
+    'default': {},
+    'users': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'test_db.sqlite3',
+        'NAME': BASE_DIR / 'db_users.sqlite3',
+    },
+    'rus': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db_rus.sqlite3',
+    },
+    'kz': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db_kz.sqlite3',
     }
 }
+
+DATABASE_ROUTERS = ['db_routers.AuthRouter', ]
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
