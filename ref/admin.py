@@ -5,6 +5,8 @@ from .models import TestModel
 
 
 class MultiDBModelAdmin(admin.ModelAdmin):
+    # object_history_template = 'cjhwjbes'
+
     def save_model(self, request, obj, form, change):
         obj.save(using=request.using_db)
 

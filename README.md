@@ -8,11 +8,11 @@
 
 # Применение миграций
 
-`` python manage.py createsuperuser --database=users``
+`` python manage.py migrate --database=users``
 
-`` python manage.py createsuperuser --database=rus``
+`` python manage.py migrate --database=rus``
 
-`` python manage.py createsuperuser --database=kz``
+`` python manage.py migrate --database=kz``
 
 # Запуск
 
