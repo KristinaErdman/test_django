@@ -47,7 +47,6 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'ref.utils.my_middleware'
 ]
 
 ROOT_URLCONF = 'test_django.urls'
@@ -75,7 +74,10 @@ WSGI_APPLICATION = 'test_django.wsgi.application'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 DATABASES = {
-    'default': {},
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'test_db.sqlite3',
+    }
 }
 
 # Password validation
