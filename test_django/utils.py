@@ -16,3 +16,10 @@ class BaseModel(models.Model):
 
     class Meta:
         abstract = True
+
+
+class BaseSingleton(BaseModel):
+    site = models.OneToOneField(Site, on_delete=models.CASCADE)
+
+    class Meta:
+        abstract = True
